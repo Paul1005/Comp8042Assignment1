@@ -2,57 +2,6 @@
 #include "Vector.h"
 
 using namespace std;
-/*template <class _Ty, class _Alloc = allocator<_Ty>>
-class vector { // varying size array of values
-public:
-
-	void push_back(const _Ty& _Val) { // insert element at end, provide strong guarantee
-		emplace_back(_Val);
-	}
-
-	iterator begin() noexcept { // return iterator for beginning of mutable sequence
-		auto& _My_data = _Mypair._Myval2;
-		return iterator(_My_data._Myfirst, _STD addressof(_My_data));
-	}
-
-	size_t size() const noexcept { // return length of sequence
-		auto& _My_data = _Mypair._Myval2;
-		return static_cast<size_type>(_My_data._Mylast - _My_data._Myfirst);
-	}
-
-	iterator end() noexcept { // return iterator for end of mutable sequence
-		auto& _My_data = _Mypair._Myval2;
-		return iterator(_My_data._Mylast, _STD addressof(_My_data));
-	}
-
-	iterator erase(const_iterator _Where) { // erase element at _Where
-		const pointer _Whereptr = _Where._Ptr;
-		auto& _My_data          = _Mypair._Myval2;
-		pointer& _Mylast        = _My_data._Mylast;
-
-		#if _ITERATOR_DEBUG_LEVEL == 2
-		_STL_VERIFY(
-			_Where._Getcont() == _STD addressof(_My_data) && _Whereptr >= _My_data._Myfirst && _Mylast > _Whereptr,
-			"vector erase iterator outside range");
-		_Orphan_range(_Whereptr, _Mylast);
-		#endif // _ITERATOR_DEBUG_LEVEL == 2
-
-		_Move_unchecked(_Whereptr + 1, _Mylast, _Whereptr);
-		_Alty_traits::destroy(_Getal(), _Unfancy(_Mylast - 1));
-		--_Mylast;
-		return iterator(_Whereptr, _STD addressof(_My_data));
-	}
-
-	_Ty& front() {
-		auto& _My_data = _Mypair._Myval2;
-		#if _CONTAINER_DEBUG_LEVEL > 0
-		_STL_VERIFY(_My_data._Myfirst != _My_data._Mylast, "front() called on empty vector");
-		#endif // _CONTAINER_DEBUG_LEVEL > 0
-
-		return *_My_data._Myfirst;
-	}
-};
-*/
 
 // The Josephus problem is the following game:
 //  N people, numbered 1 to N, are sitting in a circle.

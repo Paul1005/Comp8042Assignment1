@@ -21,6 +21,10 @@ public:
 	int GetWidth() {
 		return width;
 	}
+
+	Rectangle() {
+
+	}
 };
 
 // Define the AreaCompare and PerimeterCompare functions here
@@ -46,8 +50,8 @@ template <typename Object, typename Comparator>
 const Object& findMax(const Vector<Object>& arr, Comparator isLessThan)
 {
 	int maxIndex = 0;
-
-	for (int i = 1; i < arr.size(); ++i)
+	Vector<Object>& temp = arr;
+	for (int i = 1; i < temp.size(); ++i)
 		if (isLessThan(arr[maxIndex], arr[i]))
 			maxIndex = i;
 

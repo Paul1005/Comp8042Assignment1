@@ -2,7 +2,7 @@
 
 #include <initializer_list>
 
-template <class _T, class _Alloc = allocator<_T>>
+template <class _T>
 class Vector
 {
 private:
@@ -17,11 +17,21 @@ public:
 		list = new _T[C];
 	}
 
-	Vector(std::initializer_list<_T> initializer) {
-		C = initializer.size();
+	Vector(_T thing1, _T thing2, _T thing3, _T thing4, _T thing5, _T thing6, _T thing7) {
+		C = 7;
 		N = 0;
-		list = initializer;
+		list = new _T[C];
+		list[0] = thing1;
+		list[1] = thing2;
+		list[2] = thing3;
+		list[3] = thing4;
+		list[4] = thing5;
+		list[5] = thing6;
+		list[6] = thing7;
 	}
+
+	Vector(const _T& v) : list{ v } {}
+	Vector(_T&& v) : list{ std::move(v) } {}
 
 	void push_back(_T x) {
 		if (N == C) {
