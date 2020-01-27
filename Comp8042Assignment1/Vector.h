@@ -18,6 +18,8 @@ public:
 	}
 
 	Vector(std::initializer_list<_T> initializer) {
+		C = initializer.size();
+		N = 0;
 		list = initializer;
 	}
 
