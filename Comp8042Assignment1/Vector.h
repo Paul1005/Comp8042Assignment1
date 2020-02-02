@@ -17,17 +17,15 @@ public:
 		list = new _T[C];
 	}
 
-	Vector(_T thing1, _T thing2, _T thing3, _T thing4, _T thing5, _T thing6, _T thing7) {
-		C = 7;
-		N = 0;
+	Vector(std::initializer_list<_T> initializer) {
+		C = initializer.size();
+		N = C;
 		list = new _T[C];
-		list[0] = thing1;
-		list[1] = thing2;
-		list[2] = thing3;
-		list[3] = thing4;
-		list[4] = thing5;
-		list[5] = thing6;
-		list[6] = thing7;
+		int count = 0;
+		for (auto& element : initializer) {
+			list[count] = element;
+			++count;
+		}
 	}
 
 	Vector(const _T& v) : list{ v } {}
@@ -77,12 +75,12 @@ public:
 		return i;
 	}
 
-	void resize(int newC) {
-		C = newC;
-		_T* temp = new _T[C];
-		if (N >= C) {
-			N = C - 1;
+	void resize(int newN) {
+		N = newN;
+		if (N == C) {
+			C *= 2;
 		}
+		_T* temp = new _T[C];
 		for (int i = 0; i < N; i++) {
 			temp[i] = list[i];
 		}

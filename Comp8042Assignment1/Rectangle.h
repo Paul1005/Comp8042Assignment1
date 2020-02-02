@@ -47,11 +47,10 @@ bool PerimeterCompare(Rectangle rectangle1, Rectangle rectangle2) {
 }
 
 template <typename Object, typename Comparator>
-const Object& findMax(const Vector<Object>& arr, Comparator isLessThan)
+const Object& findMax(Vector<Object>& arr, Comparator isLessThan)
 {
 	int maxIndex = 0;
-	Vector<Object>& temp = arr;
-	for (int i = 1; i < temp.size(); ++i)
+	for (int i = 1; i < arr.size(); ++i)
 		if (isLessThan(arr[maxIndex], arr[i]))
 			maxIndex = i;
 

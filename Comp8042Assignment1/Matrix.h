@@ -55,10 +55,14 @@ public:
 	// *** Provide resize method here
 	void resize(int rows, int cols) {
 		array.resize(rows);
-		for (int i = 0; i < array.size(); i++)
+		for (int i = 0; i < array.size(); i++) {
 			//for (auto& thisRow : array)
 				//thisRow.resize(cols);
 			array[i].resize(cols);
+			for (int j = 0; j < cols; j++) {
+				array[i][j] = 0;
+			}
+		}
 	}
 
 private:
