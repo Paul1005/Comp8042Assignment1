@@ -9,6 +9,7 @@ private:
 	size_t N;
 	size_t C;
 	_T* list;
+	typedef _T* iterator;
 
 public:
 	Vector() {
@@ -54,16 +55,16 @@ public:
 		return list[i];
 	}
 
-	_T begin() {
-		return list[0];
+	iterator begin() {
+		return &list[0];
+	}
+
+	iterator end() { 
+		return &list[N-1];
 	}
 
 	size_t size() {
 		return N;
-	}
-
-	_T end() {
-		return list[N - 1];
 	}
 
 	_T erase(int i) {

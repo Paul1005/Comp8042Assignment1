@@ -43,10 +43,8 @@ int main()
 
 
 	cout << "***** Q1: Rectangle class" << endl;
-	//for (Rectangle r : recVec)
-	for (int i = 0; i < recVec.size(); i++)
-		//cout << r << endl;
-		cout << recVec[i] << endl;
+	for (Rectangle r : recVec)
+		cout << r << endl;
 	cout << endl;
 
 	cout << "Highest Area: " << FindMaxByArea(recVec) << endl;

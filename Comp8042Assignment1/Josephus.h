@@ -39,7 +39,7 @@ int Josephus(int m, int n)
 		}
 	}
 	cout << endl;
-	winner = people.begin();
+	winner = people[0];
 	// Be sure to use cout to print out each player as they are eliminated
 	return winner;
 }
